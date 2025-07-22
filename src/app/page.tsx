@@ -9,6 +9,7 @@ import Timeline from "@/components/sections/timeline"
 import Contact from "@/components/sections/contact"
 import Navigation from "@/components/layout/navigation"
 import LoadingScreen from "@/components/layout/loading-screen"
+import CoursesCertifications from "@/components/sections/courses-certifications"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -33,6 +34,7 @@ export default function Home() {
         <About />
         <TechStack />
         <Projects />
+        <CoursesCertifications />
         <Timeline />
         <Contact />
       </main>
