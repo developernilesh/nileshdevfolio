@@ -1,60 +1,72 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Home, User, Code, Briefcase, Clock, Mail } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Menu,
+  X,
+  Home,
+  User,
+  Code,
+  Briefcase,
+  BookOpen,
+  Clock,
+  Mail,
+} from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "#home", icon: Home },
   { name: "About", href: "#about", icon: User },
   { name: "Skills", href: "#skills", icon: Code },
   { name: "Projects", href: "#projects", icon: Briefcase },
+  { name: "Learning", href: "#courses", icon: BookOpen },
   { name: "Experience", href: "#experience", icon: Clock },
   { name: "Contact", href: "#contact", icon: Mail },
-]
+];
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const scrollPercent = (scrollTop / docHeight) * 100
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
 
-      setScrolled(scrollTop > 50)
-      setScrollProgress(scrollPercent)
+      setScrolled(scrollTop > 50);
+      setScrollProgress(scrollPercent);
 
       // Update active section based on scroll position
-      const sections = navItems.map((item) => item.href.substring(1))
+      const sections = navItems.map((item) => item.href.substring(1));
       const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
         }
-        return false
-      })
+        return false;
+      });
 
       if (currentSection) {
-        setActiveSection(currentSection)
+        setActiveSection(currentSection);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsOpen(false)
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
     }
-  }
+  };
 
   return (
     <>
@@ -67,7 +79,9 @@ export default function Navigation() {
 
       <motion.nav
         className={`fixed top-0 w-full z-40 transition-all duration-500 ${
-          scrolled ? "bg-[#0f0f0f]/80 backdrop-blur-xl border-b border-gray-800/50 shadow-2xl" : "bg-transparent"
+          scrolled
+            ? "bg-[#0f0f0f]/80 backdrop-blur-xl border-b border-gray-800/50 shadow-2xl"
+            : "bg-transparent"
         }`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -83,7 +97,7 @@ export default function Navigation() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
               <div className="relative text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 px-3 py-2">
-                AJ
+                NM
               </div>
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -94,7 +108,7 @@ export default function Navigation() {
             {/* Enhanced Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-1">
               {navItems.map((item, index) => {
-                const isActive = activeSection === item.href.substring(1)
+                const isActive = activeSection === item.href.substring(1);
                 return (
                   <motion.button
                     key={item.name}
@@ -113,7 +127,11 @@ export default function Navigation() {
                       <motion.div
                         className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full border border-blue-500/30"
                         layoutId="active-nav"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        transition={{
+                          type: "spring",
+                          bounce: 0.2,
+                          duration: 0.6,
+                        }}
                       />
                     )}
 
@@ -125,7 +143,9 @@ export default function Navigation() {
                       <item.icon
                         size={16}
                         className={`transition-colors duration-300 ${
-                          isActive ? "text-blue-400" : "text-gray-500 group-hover:text-blue-400"
+                          isActive
+                            ? "text-blue-400"
+                            : "text-gray-500 group-hover:text-blue-400"
                         }`}
                       />
                       <span>{item.name}</span>
@@ -136,10 +156,14 @@ export default function Navigation() {
                       className="absolute -bottom-1 left-1/2 w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100"
                       initial={{ scale: 0, x: "-50%" }}
                       whileHover={{ scale: 1 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     />
                   </motion.button>
-                )
+                );
               })}
             </div>
 
@@ -191,7 +215,7 @@ export default function Navigation() {
                 <div className="bg-[#1c1c1e]/95 backdrop-blur-xl rounded-2xl border border-gray-800/50 shadow-2xl overflow-hidden">
                   <div className="p-2">
                     {navItems.map((item, index) => {
-                      const isActive = activeSection === item.href.substring(1)
+                      const isActive = activeSection === item.href.substring(1);
                       return (
                         <motion.button
                           key={item.name}
@@ -210,7 +234,9 @@ export default function Navigation() {
                           <item.icon
                             size={18}
                             className={`transition-colors duration-300 ${
-                              isActive ? "text-blue-400" : "text-gray-500 group-hover:text-blue-400"
+                              isActive
+                                ? "text-blue-400"
+                                : "text-gray-500 group-hover:text-blue-400"
                             }`}
                           />
                           <span>{item.name}</span>
@@ -221,17 +247,23 @@ export default function Navigation() {
                               className="ml-auto w-2 h-2 bg-blue-400 rounded-full"
                               initial={{ scale: 0 }}
                               animate={{ scale: 1 }}
-                              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                              transition={{
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 10,
+                              }}
                             />
                           )}
                         </motion.button>
-                      )
+                      );
                     })}
                   </div>
 
                   {/* Mobile menu footer */}
                   <div className="px-4 py-3 border-t border-gray-800/50 bg-gradient-to-r from-blue-500/5 to-purple-600/5">
-                    <p className="text-xs text-gray-500 text-center">Scroll to navigate sections</p>
+                    <p className="text-xs text-gray-500 text-center">
+                      Scroll to navigate sections
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -249,7 +281,7 @@ export default function Navigation() {
       >
         <div className="flex flex-col space-y-3 p-3 bg-[#1c1c1e]/80 backdrop-blur-xl rounded-2xl border border-gray-800/50">
           {navItems.map((item, index) => {
-            const isActive = activeSection === item.href.substring(1)
+            const isActive = activeSection === item.href.substring(1);
             return (
               <motion.button
                 key={item.name}
@@ -276,10 +308,10 @@ export default function Navigation() {
                   {item.name}
                 </motion.div>
               </motion.button>
-            )
+            );
           })}
         </div>
       </motion.div>
     </>
-  )
+  );
 }
