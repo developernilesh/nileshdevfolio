@@ -5,13 +5,6 @@ import { Download, MessageCircle, Code, Palette, Zap, Database } from "lucide-re
 import { useState, useEffect, useRef } from "react"
 import { ROLES, FLOATING_ICONS, SOCIAL_LINKS } from "@/constants/data"
 
-const floatingIcons = [
-  { icon: Code, delay: 0, x: "10%", y: "20%" },
-  { icon: Palette, delay: 0.5, x: "80%", y: "30%" },
-  { icon: Zap, delay: 1, x: "15%", y: "70%" },
-  { icon: Database, delay: 1.5, x: "85%", y: "60%" },
-]
-
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0)
   // Remove the local roles array and use ROLES from constants
@@ -56,7 +49,7 @@ export default function Hero() {
   }, [mouseX, mouseY])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16" ref={heroRef}>
+    <section id="home" className="min-h-screen flex justify-center items-center relative overflow-hidden" ref={heroRef}>
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         {/* Animated gradient orbs */}
@@ -216,13 +209,13 @@ export default function Hero() {
                 backgroundSize: "200% 200%",
               }}
             >
-              Alex Johnson
+              Nilesh Mukherjee
             </motion.span>
           </motion.h1>
 
           {/* Enhanced role animation */}
           <motion.div
-            className="text-2xl md:text-3xl text-gray-300 mb-8 h-12 relative"
+            className="text-2xl md:text-3xl text-gray-300 mb-4 h-12 relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -248,7 +241,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -259,7 +252,7 @@ export default function Hero() {
 
           {/* Enhanced CTA buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -311,7 +304,7 @@ export default function Hero() {
               <motion.a
                 key={index}
                 href={social.href}
-                className={`relative p-3 rounded-full text-gray-500 ${social.color} ${social.bg} transition-all duration-300 border border-gray-800 hover:border-gray-600 backdrop-blur-sm`}
+                className={`relative p-3 rounded-full text-gray-500 ${social.color} ${social.bg} transition-all duration-300 border ${social.border} backdrop-blur-sm`}
                 whileHover={{
                   scale: 1.2,
                   y: -5,
@@ -341,7 +334,7 @@ export default function Hero() {
 
       {/* Enhanced scroll indicator */}
       <motion.div
-        className="absolute bottom-8"
+        className="absolute bottom-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
