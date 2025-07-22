@@ -1,16 +1,3 @@
-import {
-  Code,
-  Palette,
-  Zap,
-  Users,
-  Database,
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
 import type {
   Project,
   Experience,
@@ -20,6 +7,19 @@ import type {
   FloatingIcon,
   Value,
 } from "@/types";
+import {
+  FiCode,
+  FiDatabase,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+  FiTwitter,
+  FiUsers,
+  FiZap,
+} from "react-icons/fi";
+import { LuPalette } from "react-icons/lu";
 
 export const ROLES = [
   "Full Stack Developer",
@@ -45,32 +45,32 @@ export const SKILLS = [
 
 export const VALUES: Value[] = [
   {
-    icon: Code,
+    icon: FiCode,
     title: "Clean Code",
     description: "Writing maintainable, scalable, and efficient code",
   },
   {
-    icon: Palette,
+    icon: LuPalette,
     title: "Design Focus",
     description: "Creating beautiful, intuitive user experiences",
   },
   {
-    icon: Zap,
+    icon: FiZap,
     title: "Performance",
     description: "Optimizing for speed and user satisfaction",
   },
   {
-    icon: Users,
+    icon: FiUsers,
     title: "Collaboration",
     description: "Working effectively with teams and stakeholders",
   },
 ];
 
 export const FLOATING_ICONS: FloatingIcon[] = [
-  { icon: Code, delay: 0, x: "10%", y: "20%" },
-  { icon: Palette, delay: 0.5, x: "80%", y: "30%" },
-  { icon: Zap, delay: 1, x: "15%", y: "70%" },
-  { icon: Database, delay: 1.5, x: "85%", y: "60%" },
+  { icon: FiCode, delay: 0, x: "10%", y: "20%" },
+  { icon: LuPalette, delay: 0.5, x: "80%", y: "30%" },
+  { icon: FiZap, delay: 1, x: "15%", y: "70%" },
+  { icon: FiDatabase, delay: 1.5, x: "85%", y: "60%" },
 ];
 
 export const TECH_CATEGORIES: TechCategory[] = [
@@ -282,19 +282,19 @@ export const EXPERIENCES: Experience[] = [
 
 export const CONTACT_INFO: ContactInfo[] = [
   {
-    icon: Mail,
+    icon: FiMail,
     title: "Email",
     value: "alex.johnson@email.com",
     href: "mailto:alex.johnson@email.com",
   },
   {
-    icon: Phone,
+    icon: FiPhone,
     title: "Phone",
     value: "+1 (555) 123-4567",
     href: "tel:+15551234567",
   },
   {
-    icon: MapPin,
+    icon: FiMapPin,
     title: "Location",
     value: "San Francisco, CA",
     href: "#",
@@ -303,27 +303,30 @@ export const CONTACT_INFO: ContactInfo[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    icon: Github,
+    icon: FiGithub,
     href: "#",
+    border: "border-gray-300 hover:border-gray-200",
     color: "hover:text-gray-300",
     bg: "hover:bg-gray-800/50",
   },
   {
-    icon: Linkedin,
+    icon: FiLinkedin,
     href: "#",
+    border: "border-blue-400 hover:border-blue-300",
     color: "hover:text-blue-400",
     bg: "hover:bg-blue-500/20",
   },
   {
-    icon: Mail,
+    icon: FiMail,
     href: "#",
+    border: "border-teal-400 hover:border-teal-300",
     color: "hover:text-teal-400",
     bg: "hover:bg-teal-500/20",
   },
 ];
 
 export const FOOTER_SOCIAL_LINKS: SocialLink[] = [
-  { icon: Github, href: "#", color: "hover:text-gray-300" },
-  { icon: Linkedin, href: "#", color: "hover:text-blue-400" },
-  { icon: Twitter, href: "#", color: "hover:text-sky-400" },
+  { icon: FiGithub, href: "#", color: "hover:text-gray-300" },
+  { icon: FiLinkedin, href: "#", color: "hover:text-blue-400" },
+  { icon: FiTwitter, href: "#", color: "hover:text-sky-400" },
 ];
