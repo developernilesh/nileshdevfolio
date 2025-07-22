@@ -41,6 +41,8 @@ export interface Project {
   export interface SocialLink {
     icon: any
     href: string
+    border?: string
+    borderhover?: string
     color: string
     bg?: string
   }
