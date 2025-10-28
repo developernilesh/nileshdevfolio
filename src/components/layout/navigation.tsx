@@ -19,7 +19,7 @@ const navItems = [
   { name: "About", href: "#about", icon: User },
   { name: "Skills", href: "#skills", icon: Code },
   { name: "Projects", href: "#projects", icon: Briefcase },
-  { name: "Learning", href: "#courses", icon: BookOpen },
+  // { name: "Learning", href: "#courses", icon: BookOpen },
   { name: "Experience", href: "#experience", icon: Clock },
   { name: "Contact", href: "#contact", icon: Mail },
 ];
