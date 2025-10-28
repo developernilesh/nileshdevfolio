@@ -23,24 +23,28 @@ import { LuPalette } from "react-icons/lu";
 
 export const ROLES = [
   "Full Stack Developer",
-  "React Specialist",
-  "UI/UX Enthusiast",
+  "Frontend Specialist",
   "Problem Solver",
+  "Tech Enthusiast",
 ];
 
 export const SKILLS = [
   "JavaScript",
   "TypeScript",
+  "TailwindCSS",
+  "Bootstrap",
   "React",
   "Next.js",
+  "Redux",
   "Node.js",
-  "Python",
-  "PostgreSQL",
+  "Express",
+  // "Python",
+  // "PostgreSQL",
   "MongoDB",
-  "AWS",
-  "Docker",
+  // "AWS",
+  // "Docker",
   "Git",
-  "Figma",
+  // "Canva",
 ];
 
 export const VALUES: Value[] = [
@@ -80,10 +84,10 @@ export const TECH_CATEGORIES: TechCategory[] = [
     technologies: [
       { name: "React", icon: "⚛️" },
       { name: "Next.js", icon: "▲" },
-      { name: "TypeScript", icon: "📘" },
+      { name: "Vue", icon: "🔰" },
       { name: "Tailwind CSS", icon: "🎨" },
       //   { name: "Framer Motion", icon: "🎭" },
-      //   { name: "Redux", icon: "🔄" },
+      //   { name: "Redux", icon: "" },
     ],
   },
   {
@@ -203,81 +207,81 @@ export const PROJECT_CATEGORIES = [
 ];
 
 export const EXPERIENCES: Experience[] = [
-  {
-    id: 1,
-    title: "Senior Full Stack Developer",
-    company: "TechCorp Solutions",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
-    type: "work",
-    description:
-      "Leading development of scalable web applications using React, Node.js, and AWS. Mentoring junior developers and architecting microservices solutions.",
-    achievements: [
-      "Increased application performance by 40%",
-      "Led team of 5 developers",
-      "Implemented CI/CD pipelines",
-    ],
-  },
+  // {
+  //   id: 1,
+  //   title: "Senior Full Stack Developer",
+  //   company: "TechCorp Solutions",
+  //   location: "San Francisco, CA",
+  //   period: "2022 - Present",
+  //   type: "work",
+  //   description:
+  //     "Leading development of scalable web applications using React, Node.js, and AWS. Mentoring junior developers and architecting microservices solutions.",
+  //   achievements: [
+  //     "Increased application performance by 40%",
+  //     "Led team of 5 developers",
+  //     "Implemented CI/CD pipelines",
+  //   ],
+  // },
   {
     id: 2,
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
+    title: "Frontend Developer",
+    company: "Tangent Tech Solution",
     location: "Remote",
-    period: "2020 - 2022",
+    period: "Jun, 2024 - Present",
     type: "work",
     description:
-      "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create pixel-perfect user interfaces.",
+      "Developed and maintained multiple client projects using VueJS and Bootstrap5. Collaborated with design teams to create pixel-perfect user interfaces.",
     achievements: [
-      "Built 15+ client projects",
-      "Reduced load times by 60%",
+      "Worked on 10+ client projects",
+      "Increased application performance by 40%",
       "Implemented responsive designs",
     ],
   },
-  {
-    id: 3,
-    title: "AWS Certified Solutions Architect",
-    company: "Amazon Web Services",
-    location: "Online",
-    period: "2021",
-    type: "certification",
-    description:
-      "Achieved AWS Solutions Architect certification, demonstrating expertise in designing distributed systems on AWS.",
-    achievements: [
-      "Cloud architecture expertise",
-      "Security best practices",
-      "Cost optimization strategies",
-    ],
-  },
-  {
-    id: 4,
-    title: "Frontend Developer",
-    company: "Digital Agency Pro",
-    location: "New York, NY",
-    period: "2019 - 2020",
-    type: "work",
-    description:
-      "Specialized in creating interactive user interfaces and optimizing web performance. Worked closely with UX designers and backend developers.",
-    achievements: [
-      "Improved user engagement by 35%",
-      "Optimized Core Web Vitals",
-      "Implemented accessibility standards",
-    ],
-  },
-  {
-    id: 5,
-    title: "Computer Science Degree",
-    company: "University of Technology",
-    location: "Boston, MA",
-    period: "2015 - 2019",
-    type: "education",
-    description:
-      "Bachelor's degree in Computer Science with focus on software engineering and web development. Graduated Magna Cum Laude.",
-    achievements: [
-      "GPA: 3.8/4.0",
-      "Dean's List 6 semesters",
-      "Led university coding bootcamp",
-    ],
-  },
+  // {
+  //   id: 3,
+  //   title: "AWS Certified Solutions Architect",
+  //   company: "Amazon Web Services",
+  //   location: "Online",
+  //   period: "2021",
+  //   type: "certification",
+  //   description:
+  //     "Achieved AWS Solutions Architect certification, demonstrating expertise in designing distributed systems on AWS.",
+  //   achievements: [
+  //     "Cloud architecture expertise",
+  //     "Security best practices",
+  //     "Cost optimization strategies",
+  //   ],
+  // },
+  // {
+  //   id: 4,
+  //   title: "Frontend Developer",
+  //   company: "Digital Agency Pro",
+  //   location: "New York, NY",
+  //   period: "2019 - 2020",
+  //   type: "work",
+  //   description:
+  //     "Specialized in creating interactive user interfaces and optimizing web performance. Worked closely with UX designers and backend developers.",
+  //   achievements: [
+  //     "Improved user engagement by 35%",
+  //     "Optimized Core Web Vitals",
+  //     "Implemented accessibility standards",
+  //   ],
+  // },
+  // {
+  //   id: 5,
+  //   title: "Computer Science Degree",
+  //   company: "University of Technology",
+  //   location: "Boston, MA",
+  //   period: "2015 - 2019",
+  //   type: "education",
+  //   description:
+  //     "Bachelor's degree in Computer Science with focus on software engineering and web development. Graduated Magna Cum Laude.",
+  //   achievements: [
+  //     "GPA: 3.8/4.0",
+  //     "Dean's List 6 semesters",
+  //     "Led university coding bootcamp",
+  //   ],
+  // },
 ];
 
 export const CONTACT_INFO: ContactInfo[] = [
