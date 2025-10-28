@@ -1,17 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { SKILLS, VALUES } from "@/constants/data"
-
-const skills = SKILLS
-
-const values = VALUES
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { SKILLS, VALUES } from "@/constants/data";
+import profileImg from "../../../assets/My_project.png";
 
 export default function About() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="about" className="py-20 bg-[#121212]" ref={ref}>
@@ -23,10 +20,14 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Me</span>
+            About{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+              Me
+            </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Passionate developer with 5+ years of experience creating digital solutions
+            Passionate developer with 1+ year of experience creating digital
+            solutions
           </p>
         </motion.div>
 
@@ -40,7 +41,7 @@ export default function About() {
               <div className="w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-purple-600 p-1">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
                   <img
-                    src="/placeholder.svg?height=320&width=320"
+                    src={profileImg.src}
                     alt="Alex Johnson"
                     className="w-full h-full object-cover"
                   />
@@ -58,18 +59,20 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm a passionate full-stack developer who loves turning complex problems into simple, beautiful solutions.
-              With over 5 years of experience in web development, I specialize in creating scalable applications using
-              modern technologies.
+              I'm a passionate full-stack developer who loves turning complex
+              problems into simple, beautiful solutions. With over 1 year of
+              experience in web development, I specialize in creating scalable
+              applications using modern technologies.
             </p>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or
-              sharing knowledge with the developer community.
+              When I'm not coding, you'll find me exploring new technologies,
+              contributing to open-source projects, or sharing knowledge with
+              the developer community.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-              {values.map((value, index) => (
+              {VALUES.map((value, index) => (
                 <motion.div
                   key={value.title}
                   initial={{ opacity: 0, y: 20 }}
@@ -94,7 +97,7 @@ export default function About() {
         >
           <h3 className="text-2xl font-bold text-center mb-8">Core Skills</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {skills.map((skill, index) => (
+            {SKILLS.map((skill, index) => (
               <motion.span
                 key={skill}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -110,5 +113,5 @@ export default function About() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
