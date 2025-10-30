@@ -3,12 +3,9 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { PROJECTS, PROJECT_CATEGORIES } from "@/constants/data"
-
-const projects = PROJECTS
-
-const categories = PROJECT_CATEGORIES
+import { FiGithub } from "react-icons/fi"
 
 export default function Projects() {
   const ref = useRef(null)
@@ -16,7 +13,7 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All")
 
   const filteredProjects =
-    selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
+    selectedCategory === "All" ? PROJECTS : PROJECTS.filter((project) => project.category === selectedCategory)
 
   return (
     <section id="projects" className="py-20 bg-[#121212]" ref={ref}>
@@ -35,13 +32,13 @@ export default function Projects() {
         </motion.div>
 
         {/* Category Filter */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          {categories.map((category) => (
+          {PROJECT_CATEGORIES.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
@@ -54,7 +51,7 @@ export default function Projects() {
               {category}
             </button>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -85,7 +82,7 @@ export default function Projects() {
                     href={project.githubUrl}
                     className="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300"
                   >
-                    <Github size={16} />
+                    <FiGithub size={16} />
                   </a>
                 </div>
               </div>
@@ -119,7 +116,7 @@ export default function Projects() {
                       href={project.githubUrl}
                       className="text-gray-400 hover:text-gray-300 transition-colors duration-300"
                     >
-                      <Github size={18} />
+                      <FiGithub size={18} />
                     </a>
                   </div>
                 </div>
