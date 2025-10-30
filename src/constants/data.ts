@@ -7,6 +7,7 @@ import type {
   FloatingIcon,
   Value,
 } from "@/types";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   FiCode,
   FiDatabase,
@@ -132,70 +133,70 @@ export const TECH_CATEGORIES: TechCategory[] = [
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Learnverse",
     description:
-      "Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and order processing.",
+      "Full-stack Learning Management System built with React, Node.js, and MongoDB, featuring role-based access, secure authentication, payments via Razorpay, media uploads, and course management dashboards.",
     image: "/placeholder.svg?height=300&width=500",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    tech: ["React", "Node.js", "Express", "MongoDB"],
     category: "Full Stack",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "SecureVault",
     description:
-      "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "Full-stack Password Manager built with Next.js, Express, and TypeScript, featuring end-to-end encryption, secure authentication via ClerkJS, master password protection, and encrypted password and credit card management.",
     image: "/placeholder.svg?height=300&width=500",
-    tech: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
+    tech: ["Next.js", "TypeScript", "MongoDB", "ClerkJS"],
     category: "Web App",
     liveUrl: "#",
     githubUrl: "#",
   },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description:
-      "Beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-    image: "/placeholder.svg?height=300&width=500",
-    tech: ["React", "D3.js", "Weather API", "Tailwind"],
-    category: "Frontend",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 4,
-    title: "Social Media API",
-    description:
-      "RESTful API for social media platform with user management, post creation, real-time messaging, and content moderation.",
-    image: "/placeholder.svg?height=300&width=500",
-    tech: ["Express", "PostgreSQL", "JWT", "Redis"],
-    category: "Backend",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 5,
-    title: "Portfolio Website",
-    description:
-      "Modern, responsive portfolio website with smooth animations, dark theme, and optimized performance.",
-    image: "/placeholder.svg?height=300&width=500",
-    tech: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
-    category: "Frontend",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 6,
-    title: "Analytics Dashboard",
-    description:
-      "Real-time analytics dashboard with interactive charts, data visualization, and comprehensive reporting features.",
-    image: "/placeholder.svg?height=300&width=500",
-    tech: ["React", "Chart.js", "Express", "MongoDB"],
-    category: "Full Stack",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
+  // {
+  //   id: 3,
+  //   title: "Weather Dashboard",
+  //   description:
+  //     "Beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  //   tech: ["React", "D3.js", "Weather API", "Tailwind"],
+  //   category: "Frontend",
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Social Media API",
+  //   description:
+  //     "RESTful API for social media platform with user management, post creation, real-time messaging, and content moderation.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  //   tech: ["Express", "PostgreSQL", "JWT", "Redis"],
+  //   category: "Backend",
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Portfolio Website",
+  //   description:
+  //     "Modern, responsive portfolio website with smooth animations, dark theme, and optimized performance.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  //   tech: ["Next.js", "Framer Motion", "Tailwind", "Vercel"],
+  //   category: "Frontend",
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Analytics Dashboard",
+  //   description:
+  //     "Real-time analytics dashboard with interactive charts, data visualization, and comprehensive reporting features.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  //   tech: ["React", "Chart.js", "Express", "MongoDB"],
+  //   category: "Full Stack",
+  //   liveUrl: "#",
+  //   githubUrl: "#",
+  // },
 ];
 
 export const PROJECT_CATEGORIES = [
@@ -308,21 +309,21 @@ export const CONTACT_INFO: ContactInfo[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: FiGithub,
-    href: "#",
+    href: "https://github.com/developernilesh/",
     border: "border-gray-300 hover:border-gray-200",
     color: "hover:text-gray-300",
     bg: "hover:bg-gray-800/50",
   },
   {
     icon: FiLinkedin,
-    href: "#",
+    href: "https://www.linkedin.com/in/mukherjee-nilesh/",
     border: "border-blue-400 hover:border-blue-300",
     color: "hover:text-blue-400",
     bg: "hover:bg-blue-500/20",
   },
   {
-    icon: FiMail,
-    href: "#",
+    icon: FaXTwitter,
+    href: "https://x.com/NileshM2503",
     border: "border-teal-400 hover:border-teal-300",
     color: "hover:text-teal-400",
     bg: "hover:bg-teal-500/20",
