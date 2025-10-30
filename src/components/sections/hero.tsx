@@ -304,6 +304,7 @@ export default function Hero() {
               <motion.a
                 key={index}
                 href={social.href}
+                target="blank"
                 className={`relative p-3 rounded-full text-gray-500 ${social.color} ${social.bg} transition-all duration-300 border ${social.border} backdrop-blur-sm`}
                 whileHover={{
                   scale: 1.2,
