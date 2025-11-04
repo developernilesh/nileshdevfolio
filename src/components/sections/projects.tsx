@@ -80,14 +80,14 @@ export default function Projects() {
                 <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.liveUrl}
-                    target="blank"
+                    target="_blank"
                     className="p-2 bg-blue-500 rounded-full hover:bg-blue-600 transition-colors duration-300"
                   >
                     <ExternalLink size={16} />
                   </a>
                   <a
                     href={project.githubUrl}
-                    target="blank"
+                    target="_blank"
                     className="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300"
                   >
                     <FiGithub size={16} />
@@ -121,14 +121,14 @@ export default function Projects() {
                   <div className="flex space-x-2">
                     <a
                       href={project.liveUrl}
-                      target="blank"
+                      target="_blank"
                       className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
                     >
                       <ExternalLink size={18} />
                     </a>
                     <a
                       href={project.githubUrl}
-                      target="blank"
+                      target="_blank"
                       className="text-gray-400 hover:text-gray-300 transition-colors duration-300"
                     >
                       <FiGithub size={18} />
@@ -148,7 +148,7 @@ export default function Projects() {
         >
           <a
             href="https://github.com/developernilesh/"
-            target="blank"
+            target="_blank"
             className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300"
           >
             View More Projects on GitHub
