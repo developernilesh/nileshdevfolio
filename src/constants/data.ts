@@ -21,6 +21,9 @@ import {
   FiZap,
 } from "react-icons/fi";
 import { LuPalette } from "react-icons/lu";
+import Project1 from "../../assets/Project1.png";
+import Project2 from "../../assets/Project2.png";
+import Project3 from "../../assets/Project3.png";
 
 export const ROLES = [
   "Full Stack Developer",
@@ -136,34 +139,34 @@ export const PROJECTS: Project[] = [
     title: "Learnverse",
     description:
       "Full-stack Learning Management System built with React, Node.js, and MongoDB, featuring role-based access, secure authentication, payments via Razorpay, media uploads, and course management dashboards.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: `${Project1.src}`,
     tech: ["React", "Node.js", "Express", "MongoDB"],
     category: "Full Stack",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://app-learnverse.vercel.app/",
+    githubUrl: "https://github.com/developernilesh/LMS-UI",
   },
   {
     id: 2,
     title: "SecureVault",
     description:
       "Full-stack Password Manager built with Next.js, Express, and TypeScript, featuring end-to-end encryption, secure authentication via ClerkJS, master password protection, and encrypted password and credit card management.",
-    image: "/placeholder.svg?height=300&width=500",
-    tech: ["Next.js", "TypeScript", "MongoDB", "ClerkJS"],
-    category: "Web App",
-    liveUrl: "#",
-    githubUrl: "#",
+    image: `${Project2.src}`,
+    tech: ["Next.js", "TypeScript", "MongoDB", "Clerk.js"],
+    category: "Full Stack",
+    liveUrl: "https://app-securevault.vercel.app/",
+    githubUrl: "https://github.com/developernilesh/password-manager",
   },
-  // {
-  //   id: 3,
-  //   title: "Weather Dashboard",
-  //   description:
-  //     "Beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-  //   image: "/placeholder.svg?height=300&width=500",
-  //   tech: ["React", "D3.js", "Weather API", "Tailwind"],
-  //   category: "Frontend",
-  //   liveUrl: "#",
-  //   githubUrl: "#",
-  // },
+  {
+    id: 3,
+    title: "Code Editor (IDE)",
+    description:
+      "Browser-based code editor built with React and TailwindCSS, featuring Monaco Editor integration, multi-language support (JavaScript, C++, Java, Python, TypeScript), and real-time code execution via Piston API.",
+    image: `${Project3.src}`,
+    tech: ["React", "Monaco Editor", "Piston API", "Tailwind"],
+    category: "Frontend",
+    liveUrl: "https://code-editor-ide.vercel.app/",
+    githubUrl: "https://github.com/developernilesh/Code-Editor",
+  },
   // {
   //   id: 4,
   //   title: "Social Media API",
@@ -199,13 +202,7 @@ export const PROJECTS: Project[] = [
   // },
 ];
 
-export const PROJECT_CATEGORIES = [
-  "All",
-  "Full Stack",
-  "Frontend",
-  "Backend",
-  "Web App",
-];
+export const PROJECT_CATEGORIES = ["All", "Full Stack", "Frontend"];
 
 export const EXPERIENCES: Experience[] = [
   // {
