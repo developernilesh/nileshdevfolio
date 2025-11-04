@@ -257,7 +257,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            <motion.button
+            <motion.a
+              href="/Test.pdf"
+              download="Test.pdf"
               className="relative bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 overflow-hidden group"
               whileHover={{
                 scale: 1.05,
@@ -279,7 +281,7 @@ export default function Hero() {
                 whileHover={{ x: "100%" }}
                 transition={{ duration: 0.8 }}
               />
-            </motion.button>
+            </motion.a>
 
             <motion.button
               className="relative border border-gray-600 hover:border-teal-400 px-8 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 hover:bg-teal-400/10 group overflow-hidden"
@@ -304,7 +306,7 @@ export default function Hero() {
               <motion.a
                 key={index}
                 href={social.href}
-                target="blank"
+                target="_blank"
                 className={`relative p-3 rounded-full text-gray-500 ${social.color} ${social.bg} transition-all duration-300 border ${social.border} backdrop-blur-sm`}
                 whileHover={{
                   scale: 1.2,
