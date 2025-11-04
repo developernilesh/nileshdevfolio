@@ -1,19 +1,21 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { ExternalLink } from "lucide-react"
-import { PROJECTS, PROJECT_CATEGORIES } from "@/constants/data"
-import { FiGithub } from "react-icons/fi"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { ExternalLink } from "lucide-react";
+import { PROJECTS, PROJECT_CATEGORIES } from "@/constants/data";
+import { FiGithub } from "react-icons/fi";
 
 export default function Projects() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [selectedCategory, setSelectedCategory] = useState("All")
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects =
-    selectedCategory === "All" ? PROJECTS : PROJECTS.filter((project) => project.category === selectedCategory)
+    selectedCategory === "All"
+      ? PROJECTS
+      : PROJECTS.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="projects" className="py-20 bg-[#121212]" ref={ref}>
@@ -26,13 +28,17 @@ export default function Projects() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Projects</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+              Projects
+            </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">A showcase of my recent work and personal projects</p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            A showcase of my recent work and personal projects
+          </p>
         </motion.div>
 
         {/* Category Filter */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -51,7 +57,7 @@ export default function Projects() {
               {category}
             </button>
           ))}
-        </motion.div> */}
+        </motion.div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -61,25 +67,27 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-              className="bg-[#1c1c1e] rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 group"
+              className="bg-[#1c1c1e] rounded-2xl overflow-hidden border border-gray-700 hover:border-gray-700 transition-all duration-300 group"
               whileHover={{ y: -5 }}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-48 transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.liveUrl}
+                    target="blank"
                     className="p-2 bg-blue-500 rounded-full hover:bg-blue-600 transition-colors duration-300"
                   >
                     <ExternalLink size={16} />
                   </a>
                   <a
                     href={project.githubUrl}
+                    target="blank"
                     className="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300"
                   >
                     <FiGithub size={16} />
@@ -91,11 +99,16 @@ export default function Projects() {
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3">{project.description}</p>
+                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-[#121212] text-xs rounded-full text-gray-300">
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-[#121212] text-xs rounded-full text-gray-300"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -108,12 +121,14 @@ export default function Projects() {
                   <div className="flex space-x-2">
                     <a
                       href={project.liveUrl}
+                      target="blank"
                       className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
                     >
                       <ExternalLink size={18} />
                     </a>
                     <a
                       href={project.githubUrl}
+                      target="blank"
                       className="text-gray-400 hover:text-gray-300 transition-colors duration-300"
                     >
                       <FiGithub size={18} />
@@ -132,7 +147,8 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <a
-            href="#"
+            href="https://github.com/developernilesh/"
+            target="blank"
             className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300"
           >
             View More Projects on GitHub
@@ -141,5 +157,5 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
