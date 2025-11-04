@@ -1,44 +1,59 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react"
-import type { FormData } from "@/types"
+import type React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import type { FormData } from "@/types";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
-    setIsSubmitting(false)
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
 
-    // You would typically show a success toast here
-    alert("Message sent successfully!")
-  }
+      setFormData({ name: "", email: "", message: "" });
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <section id="contact" className="py-20 bg-[#121212]" ref={ref}>
@@ -51,10 +66,13 @@ export default function Contact() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Get In{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Touch</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+              Touch
+            </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Ready to start your next project? Let's discuss how we can work together
+            Ready to start your next project? Let's discuss how we can work
+            together
           </p>
         </motion.div>
 
@@ -69,8 +87,9 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
               <p className="text-gray-300 text-lg mb-8">
-                I'm always interested in hearing about new opportunities and exciting projects. Whether you have a
-                question or just want to say hi, feel free to reach out!
+                I'm always interested in hearing about new opportunities and
+                exciting projects. Whether you have a question or just want to
+                say hi, feel free to reach out!
               </p>
             </div>
 
@@ -121,13 +140,14 @@ export default function Contact() {
               <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {[
-                  { icon: Github, href: "#", color: "hover:text-gray-300" },
-                  { icon: Linkedin, href: "#", color: "hover:text-blue-400" },
-                  { icon: Twitter, href: "#", color: "hover:text-sky-400" },
+                  { icon: FiGithub, href: "https://github.com/developernilesh/", color: "hover:text-gray-300" },
+                  { icon: FiLinkedin, href: "https://www.linkedin.com/in/mukherjee-nilesh/", color: "hover:text-blue-400" },
+                  { icon: FaXTwitter, href: "https://x.com/NileshM2503", color: "hover:text-sky-400" },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
+                    target="_blank"
                     className={`p-3 bg-[#1c1c1e] rounded-lg text-gray-500 ${social.color} transition-all duration-300 border border-gray-800 hover:border-gray-700`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
@@ -148,7 +168,10 @@ export default function Contact() {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -164,7 +187,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -180,7 +206,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -219,5 +248,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
