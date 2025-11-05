@@ -98,25 +98,26 @@ export default function Contact() {
                 {
                   icon: Mail,
                   title: "Email",
-                  value: "alex.johnson@email.com",
-                  href: "mailto:alex.johnson@email.com",
+                  value: "nileshmukherjee2017@email.com",
+                  href: "mailto:nileshmukherjee2017@email.com",
                 },
                 {
                   icon: Phone,
                   title: "Phone",
-                  value: "+1 (555) 123-4567",
-                  href: "tel:+15551234567",
+                  value: "+91 73849-04888",
+                  href: "tel:+917384904888",
                 },
                 {
                   icon: MapPin,
                   title: "Location",
-                  value: "San Francisco, CA",
-                  href: "#",
+                  value: "Kolkata, India",
+                  href: "https://www.google.com/maps/place/Kolkata,+West+Bengal/@22.5355649,88.2649496,12z/data=!3m1!4b1!4m6!3m5!1s0x39f882db4908f667:0x43e330e68f6c2cbc!8m2!3d22.5743545!4d88.3628734!16zL20vMGN2dzk?entry=ttu&g_ep=EgoyMDI1MTEwMi4wIKXMDSoASAFQAw%3D%3D",
                 },
               ].map((contact, index) => (
                 <motion.a
                   key={contact.title}
-                  href={contact.href}
+                  // href={contact.href}
+                  // target="_blank"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
@@ -140,9 +141,21 @@ export default function Contact() {
               <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {[
-                  { icon: FiGithub, href: "https://github.com/developernilesh/", color: "hover:text-gray-300" },
-                  { icon: FiLinkedin, href: "https://www.linkedin.com/in/mukherjee-nilesh/", color: "hover:text-blue-400" },
-                  { icon: FaXTwitter, href: "https://x.com/NileshM2503", color: "hover:text-sky-400" },
+                  {
+                    icon: FiGithub,
+                    href: "https://github.com/developernilesh/",
+                    color: "hover:text-gray-300",
+                  },
+                  {
+                    icon: FiLinkedin,
+                    href: "https://www.linkedin.com/in/mukherjee-nilesh/",
+                    color: "hover:text-blue-400",
+                  },
+                  {
+                    icon: FaXTwitter,
+                    href: "https://x.com/NileshM2503",
+                    color: "hover:text-sky-400",
+                  },
                 ].map((social, index) => (
                   <motion.a
                     key={index}
