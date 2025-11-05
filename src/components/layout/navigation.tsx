@@ -9,7 +9,6 @@ import {
   User,
   Code,
   Briefcase,
-  BookOpen,
   Clock,
   Mail,
 } from "lucide-react";
@@ -19,7 +18,6 @@ const navItems = [
   { name: "About", href: "#about", icon: User },
   { name: "Skills", href: "#skills", icon: Code },
   { name: "Projects", href: "#projects", icon: Briefcase },
-  // { name: "Learning", href: "#courses", icon: BookOpen },
   { name: "Experience", href: "#experience", icon: Clock },
   { name: "Contact", href: "#contact", icon: Mail },
 ];
@@ -280,7 +278,7 @@ export default function Navigation() {
         transition={{ duration: 0.8, delay: 1 }}
       >
         <div className="flex flex-col space-y-3 p-3 bg-[#1c1c1e]/80 backdrop-blur-xl rounded-2xl border border-gray-800/50">
-          {navItems.map((item, index) => {
+          {navItems.map((item) => {
             const isActive = activeSection === item.href.substring(1);
             return (
               <motion.button
