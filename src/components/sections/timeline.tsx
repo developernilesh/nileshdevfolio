@@ -145,17 +145,9 @@ export default function Timeline() {
           ))}
 
           {experiences.map((experience, index) => {
-            const itemRef = useRef(null);
-            const itemInView = useInView(containerRef, {
-              once: true,
-              margin: "-50px",
-              amount: 0.3,
-            });
-
             return (
               <motion.div
                 key={experience.id}
-                ref={itemRef}
                 className="relative flex items-start mb-16 last:mb-0"
                 initial={{ opacity: 0, x: -100 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
