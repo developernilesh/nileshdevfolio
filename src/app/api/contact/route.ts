@@ -40,6 +40,7 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error) {
+    console.error("API /api/contact error:", error);
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 }
