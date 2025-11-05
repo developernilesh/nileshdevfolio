@@ -97,8 +97,8 @@ export default function Timeline() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            A timeline of my professional experience, education, and
-            achievements
+            A timeline of my professional experience
+            {/* , education, and achievements */}
           </motion.p>
 
           {/* Animated divider */}
@@ -238,7 +238,7 @@ export default function Timeline() {
                     />
 
                     <div className="relative z-10">
-                      <div className="flex items-start justify-between mb-4">
+                      <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
                           <motion.span
                             className="text-3xl"
