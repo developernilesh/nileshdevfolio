@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { PROJECTS, PROJECT_CATEGORIES } from "@/constants/data";
 import { FiGithub } from "react-icons/fi";
+import Image from "next/image";
 
 export default function Projects() {
   const ref = useRef(null);
@@ -71,10 +72,13 @@ export default function Projects() {
               whileHover={{ y: -5 }}
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={project.image || "/placeholder.svg"}
+                <Image
+                  src={project.image} // use the imported image directly
                   alt={project.title}
+                  width={640} // set appropriate width
+                  height={192} // set appropriate height (h-48 = 192px)
                   className="w-full h-48 transition-transform duration-300 group-hover:scale-110"
+                  priority // mark as LCP-critical
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
