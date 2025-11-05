@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion"
-import { Download, MessageCircle, Code, Palette, Zap, Database } from "lucide-react"
+import { Download, MessageCircle } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import { ROLES, FLOATING_ICONS, SOCIAL_LINKS } from "@/constants/data"
 
@@ -194,7 +194,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Hi, I'm{" "}
+            Hi, I&apos;m&nbsp;
             <motion.span
               className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-teal-400"
               animate={{
@@ -247,7 +247,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             I craft exceptional digital experiences with modern technologies. Passionate about creating scalable,
-            user-friendly applications that make a difference in people's lives.
+            user-friendly applications that make a difference in people&apos;s lives.
           </motion.p>
 
           {/* Enhanced CTA buttons */}
@@ -291,7 +291,7 @@ export default function Hero() {
             >
               <motion.div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <MessageCircle size={20} className="relative z-10" />
-              <span className="relative z-10">Let's Talk</span>
+              <span className="relative z-10">Let&apos;s Talk</span>
             </motion.button>
           </motion.div>
 
