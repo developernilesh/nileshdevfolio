@@ -1,3 +1,5 @@
+import { ElementType } from "react"
+
 export interface Project {
     id: number
     title: string
@@ -32,14 +34,14 @@ export interface Project {
   }
   
   export interface ContactInfo {
-    icon: any
+    icon: ElementType
     title: string
     value: string
     href: string
   }
   
   export interface SocialLink {
-    icon: any
+    icon: ElementType
     href: string
     border?: string
     borderhover?: string
@@ -48,7 +50,7 @@ export interface Project {
   }
   
   export interface FloatingIcon {
-    icon: any
+    icon: ElementType
     delay: number
     x: string
     y: string
@@ -61,7 +63,7 @@ export interface Project {
   }
   
   export interface Value {
-    icon: any
+    icon: ElementType
     title: string
     description: string
   }
