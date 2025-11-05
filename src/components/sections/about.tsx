@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { SKILLS, VALUES } from "@/constants/data";
 import profileImg from "../../../assets/My_project.png";
+import Image from "next/image";
 
 export default function About() {
   const ref = useRef(null);
@@ -40,10 +41,13 @@ export default function About() {
             <div className="relative">
               <div className="w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 to-purple-600 p-1">
                 <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-                  <img
-                    src={profileImg.src}
+                  <Image
+                    src={profileImg}          // use the imported image directly
                     alt="Alex Johnson"
                     className="w-full h-full object-cover"
+                    width={320}               // provide size for optimization
+                    height={320}
+                    priority                  // mark as LCP-critical
                   />
                 </div>
               </div>
@@ -59,14 +63,14 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm a passionate full-stack developer who loves turning complex
+              I&apos;m a passionate full-stack developer who loves turning complex
               problems into simple, beautiful solutions. With over 1 year of
               experience in web development, I specialize in creating scalable
               applications using modern technologies.
             </p>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies,
+              When I&apos;m not coding, you&apos;ll find me exploring new technologies,
               contributing to open-source projects, or sharing knowledge with
               the developer community.
             </p>
