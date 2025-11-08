@@ -25,7 +25,7 @@ A modern, interactive portfolio website built with Next.js 14, TypeScript, and F
 
 1. Clone the repository:
 ```bash
-git clone <https://github.com/developernilesh/nileshdevfolio>
+git clone https://github.com/developernilesh/nileshdevfolio
 ```
 
 2. Install dependencies:
