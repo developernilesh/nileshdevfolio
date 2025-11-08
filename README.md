@@ -52,7 +52,6 @@ npm run dev
 📁 Project Structure
 ````
 This is the code block that represents the suggested code change:
-```markdown
 src/
 ├── app/                # Next.js app router pages
 ├── components/
@@ -63,7 +62,6 @@ src/
 ├── hooks/              # Custom React hooks
 ├── lib/                # Utility functions
 └── types/              # TypeScript types
-```
 ````
 
 🔥 Key Components:
