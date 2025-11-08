@@ -259,7 +259,7 @@ export default function Hero() {
           >
             <motion.a
               href="/Nilesh_Resume.pdf"
-              download="Test.pdf"
+              download="NILESH_MUKHERJEE_RESUME.pdf"
               className="relative bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 overflow-hidden group"
               whileHover={{
                 scale: 1.05,
